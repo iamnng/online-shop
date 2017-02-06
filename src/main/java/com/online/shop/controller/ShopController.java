@@ -23,8 +23,8 @@ public class ShopController {
 	@RequestMapping("/products")
 	public String getAllProducts(Model model){
 		List<Product> productList = productDao.getProductList();
-		Product product = productList.get(0);
-		model.addAttribute(product);
+//		Product product = productList.get(0);
+		model.addAttribute(productList);
 		return "products";
 	}
 }
