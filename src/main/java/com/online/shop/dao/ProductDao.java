@@ -11,11 +11,23 @@ import com.online.shop.model.Product;
 public class ProductDao {
 	private List<Product> productList;
 	
-	public List<Product> getProductList(){
+	{
 		this.productList = new ArrayList<Product>();
-		productList.add(new Product("Electric Guitar", "Strings", "Trendy Guitar by Music.com", 5500, "New", "Active", 5, "Yamaha"));
-		productList.add(new Product("Flute", "Woodwinds", "Flute that compliments you!", 1800, "Refurbished", "Active", 8, "Sanskriti"));
-		productList.add(new Product("Tabla", "Percussion", "You will love this Tabla", 6200, "New", "Active", 2, "Yamaha"));
+		productList.add(new Product("001", "Electric Guitar", "Strings", "Trendy Guitar by Music.com", 5500, "New", "Active", 5, "Yamaha"));
+		productList.add(new Product("002", "Flute", "Woodwinds", "Flute that compliments you!", 1800, "Refurbished", "Active", 8, "Sanskriti"));
+		productList.add(new Product("003", "Tabla", "Percussion", "You will love this Tabla", 6200, "New", "Active", 2, "Yamaha"));
+	}
+	
+	public List<Product> getProductList(){
 		return productList;
+	}
+	
+	public Product getProductById(String productId){
+		Product searchedProduct = null;
+		for(Product product : productList){
+			if(product.getProductId().equalsIgnoreCase(productId));
+			searchedProduct = product;
+		}
+		return searchedProduct;
 	}
 }

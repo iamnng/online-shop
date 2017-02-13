@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.online.shop.dao.ProductDao;
@@ -27,10 +28,10 @@ public class ShopController {
 		return "products";
 	}
 	
-	@RequestMapping("/products/productDetails")
-	public String getProductDetails(Model model){
-		List<Product> productList = productDao.getProductList();
-		model.addAttribute(productList);
+	@RequestMapping("/products/productDetails/{productId}")
+	public String getProductDetails(Model model, @PathVariable String productId){
+		Product product = productDao.getProductById(productId);
+		model.addAttribute(product);
 		return "productDetails";
 	}
 }

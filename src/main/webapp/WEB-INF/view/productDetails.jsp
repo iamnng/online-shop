@@ -15,10 +15,10 @@
 					<img src="#" alt="image" style="width: 100%; height: 300px">
 				</div>
 				<div class="col-md-5">
-					<h1>Product Name</h1>
-					<p>Product Description</p>
-					<p>Product Price</p>
-					<p>Product Manufacturer</p>
+					<h1>${product.productName}</h1>
+					<p>${product.productPrice}</p>
+					<p>${product.productPrice}</p>
+					<p>${product.productManufacturer}</p>
 				</div>
 			</div>
 		</div>
