@@ -25,8 +25,9 @@ public class ProductDao {
 	public Product getProductById(String productId){
 		Product searchedProduct = null;
 		for(Product product : productList){
-			if(product.getProductId().equalsIgnoreCase(productId));
-			searchedProduct = product;
+			if(product.getProductId().equalsIgnoreCase(productId)){
+				searchedProduct = product;				
+			}
 		}
 		return searchedProduct;
 	}
